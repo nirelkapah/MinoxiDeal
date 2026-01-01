@@ -13,6 +13,10 @@ const nextConfig = {
   experimental: {
     mdxRs: true,
   },
+  webpack: (config) => {
+    config.externals.push('markdown-wasm');
+    return config;
+  },
 };
 
 export default withContentlayer(nextConfig);
